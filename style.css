@@ -84,3 +84,5 @@ button:hover {opacity: 0.8;}
   transition: all .3s linear 0s;opacity: 0;z-index: -999;}
 .full-width {width: 100%;}
 .custom-width {width: 185px;}
+.modal .container {width: 100%;}
+label {width:100%;}

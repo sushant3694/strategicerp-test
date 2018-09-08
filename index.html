@@ -150,6 +150,7 @@
 						      <tr class="headings">
 						        <th><input type="checkbox" class="chk"/></th>		
 						        <th>ID</th>
+						        <th></th>
 						        <th>Name</th>
 						        <th>Login ID</th>
 						        <th>Mobile</th>
@@ -162,6 +163,7 @@
 						      <tr>
 						        <td><input type="checkbox" class="chk"/></td>		
 						        <td>1001</td>
+						        <td><img src="test/user.png"></td>
 						        <td>Girish Phalak</td>
 						        <td>Girish</td>
 						        <td>9898989898</td>
@@ -187,6 +189,7 @@
 						       <tr>
 						        <td><input type="checkbox" class="chk"/></td>		
 						        <td>1002</td>
+						        <td><img src="test/user.png"></td>
 						        <td>Girish Phalak</td>
 						        <td>Girish</td>
 						        <td>9898989898</td>
@@ -212,6 +215,7 @@
 						       <tr>
 						        <td><input type="checkbox" class="chk"/></td>		
 						        <td>1003</td>
+						        <td><img src="test/user.png"></td>
 						        <td>Girish Phalak</td>
 						        <td>Girish</td>
 						        <td>8989898989</td>
@@ -237,6 +241,7 @@
 						       <tr>
 						        <td><input type="checkbox" class="chk"/></td>		
 						        <td>1004</td>
+						        <td><img src="test/user.png"></td>
 						        <td>Girish Phalak</td>
 						        <td>Girish</td>
 						        <td>8989898989</td>
@@ -262,6 +267,7 @@
 						       <tr>
 						        <td><input type="checkbox" class="chk"/></td>		
 						        <td>1005</td>
+						        <td><img src="test/user.png"></td>
 						        <td>Girish Phalak</td>
 						        <td>Girish</td>
 						        <td>9797979797</td>
@@ -287,6 +293,7 @@
 						       <tr>
 						        <td><input type="checkbox" class="chk"/></td>		
 						        <td>1006</td>
+						        <td><img src="test/user.png"></td>
 						        <td>Girish Phalak</td>
 						        <td>Girish</td>
 						        <td>9797979797</td>
@@ -312,6 +319,7 @@
 						       <tr>
 						        <td><input type="checkbox" class="chk"/></td>		
 						        <td>1007</td>
+						        <td><img src="test/user.png"></td>
 						        <td>Girish Phalak</td>
 						        <td>Girish</td>
 						        <td>9797979797</td>
@@ -337,6 +345,7 @@
 						       <tr>
 						        <td><input type="checkbox" class="chk"/></td>		
 						        <td>1008</td>
+						        <td><img src="test/user.png"></td>
 						        <td>Girish Phalak</td>
 						        <td>Girish</td>
 						        <td>8787878787</td>
@@ -362,6 +371,7 @@
 						      <tr>
 						        <td><input type="checkbox" class="chk"/></td>		
 						        <td>1009</td>
+						        <td><img src="test/user.png"></td>
 						        <td>Girish Phalak</td>
 						        <td>Girish</td>
 						        <td>8787878787</td>
@@ -383,9 +393,11 @@
 										</a>
 						        	</span>
 						        </td>
+						    </tr>
 						      <tr>
 						        <td><input type="checkbox" class="chk"/></td>		
 						        <td>1010</td>
+						        <td><img src="test/user.png"></td>
 						        <td>Girish Phalak</td>
 						        <td>Girish</td>
 						        <td>8787878787</td>
@@ -411,6 +423,7 @@
 						      <tr>
 						        <td><input type="checkbox" class="chk"/></td>		
 						        <td>1011</td>
+						        <td><img src="test/user.png"></td>
 						        <td>Girish Phalak</td>
 						        <td>Girish</td>
 						        <td>8787878787</td>
@@ -473,7 +486,8 @@
 		<form class="modal-content">
 		    <div class="modal-header">
 		        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-		        <h4 class="modal-title" id="myModalLabel">EDIT USER &nbsp;- &nbsp;Girish Phalak</h4>
+		        <h4 class="modal-title" id="myModalLabel2
+		        ">EDIT USER &nbsp;- &nbsp;Girish Phalak</h4>
 		    </div>
 		    <div class="modal-body">
 		       <div class="container">
@@ -520,8 +534,8 @@
 		    </div>
 		    <div class="modal-footer">
 
-			    <button class="skip" type="submit" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Skip</button>
-			    <button class="submit" type="submit" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Submit</button>
+			    <button class="skip" type="submit" style="width:auto;">Skip</button>
+			    <button class="submit" type="submit" style="width:auto;">Submit</button>
 		    </div>
 		</form>
 	</div>
@@ -538,6 +552,7 @@
 			$('.skip').click(function(){
   				$('.nav-tabs > .active').next('li').find('a').trigger('click');
 			});
+			
 		});
 
 		var modal = document.getElementById('id01');
@@ -546,7 +561,12 @@
 		        modal.style.display = "none";
 		    }
 		}
-		
+		var modal2 = document.getElementById('id02');
+		window.onclick = function(event) {
+		    if (event.target == modal2) {
+		        modal2.style.display = "none";
+		    }
+		}
 	</script>
 </body>
 </html>
