@@ -136,7 +136,7 @@
 			  			<div class="panel panel-default">
 						  <div class="panel-heading">
 						  	<div class="col-lg-1">
-						  		<a href="#" class="add-i" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+						  		<a href="#" class="addi" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
 						  			<span>+</span>
 						  		</a>
 						  	</div>
@@ -446,7 +446,7 @@
 
 	<!-- Screen 2 modal -->
 	<div id="id01" class="modal">
-		<form class="modal-content" action="/action_page.php">
+		<form class="modal-content">
 		    <div class="modal-header">
 		        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 		        <h4 class="modal-title" id="myModalLabel">ADD NEW</h4>
@@ -467,9 +467,10 @@
 	</div>
 	<!-- Screen 2 modal-->
 
+
 	<!-- Screen 3 modal -->
 	<div id="id02" class="modal">
-		<form class="modal-content" action="/action_page.php">
+		<form class="modal-content">
 		    <div class="modal-header">
 		        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
 		        <h4 class="modal-title" id="myModalLabel">EDIT USER &nbsp;- &nbsp;Girish Phalak</h4>
@@ -518,8 +519,9 @@
 			    </div>
 		    </div>
 		    <div class="modal-footer">
-			    <button type="skip">Skip</button>
-			    <button type="submit">Submit</button>
+
+			    <button class="skip" type="submit" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Skip</button>
+			    <button class="submit" type="submit" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Submit</button>
 		    </div>
 		</form>
 	</div>
@@ -527,18 +529,26 @@
 
 	<!-- js for modal -->
 	<script>
-	var modal = document.getElementById('id01');
-	window.onclick = function(event) {
-	    if (event.target == modal) {
-	        modal.style.display = "none";
-	    }
-	}
-	$('#hamberger').click(function(){
-    	$(".left-content").toggleClass("no-display");
-    	$(".slide-screen").toggleClass("full-width");
-    	$("td,th").toggleClass("custom-width");
-	});
-	</script>
+		$(document).ready(function(){
+			$('#hamberger').click(function(){
+		    	$(".left-content").toggleClass("no-display");
+		    	$(".slide-screen").toggleClass("full-width");
+		    	$("td,th").toggleClass("custom-width");
+			});
+			$('.skip').click(function(){
+  				$('.nav-tabs > .active').next('li').find('a').trigger('click');
+			});
+		});
 
+		var modal = document.getElementById('id01');
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+		}
+		
+	</script>
 </body>
 </html>
+
+

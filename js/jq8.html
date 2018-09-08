@@ -1,0 +1,121 @@
+<!-- modal box using js -->
+<h1>heading 1</h1>
+<p>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<h1>heading 2</h1>
+<p>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<h1>heading 3</h1>
+<p>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<a href="#">Open box</a>
+<div class="blackbox"></div>
+<div class="modalbox">
+	<button class="close">Close</button>
+</div>
+
+<style type="text/css">
+	body{
+		height: 1000px;
+	}
+
+	h1,p{
+		width: 300px;
+		margin:auto;
+		border: 1px solid;
+		padding: 20px;
+	}
+
+	.blackbox{
+		width: 100%;
+		height: 100%;
+		/*background: rgb(0,0,0)*/
+		/*background: rgba(0,0,0,0);*/
+		/*background: rgba(0,0,0,1);*/
+		background: rgba(0,0,0,0.5);
+		position: fixed;
+		left: 0;
+		top: 0;
+		display: none;
+	}
+	.modalbox{
+		width: 600px;
+		height: 250px;
+		background: #fff;
+		position: fixed;
+		left: 50%;
+		top: -250;
+		margin-left: -300px;
+		border-radius: 20px;
+	}
+</style>
+
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("p").hide();
+		$("p").first().show();
+		$("h1").click(function(){
+			ans = $(this).next().is("visible");
+			//alert(ans)
+
+			//if false 
+			if(!ans){
+				$("p").slideUp();
+				$(this).next().slideDown();
+			}
+		})
+
+		$("a").click(function(object_of_a){
+			//console.log(object_of_a)
+			object_of_a.preventDefault();
+			$(".blackbox").fadeIn(800);
+			$(".modalbox").animate({
+				"top":"100px"
+			},1000)
+		});
+
+		// close button vr or sideclick kelyavr close hoel modal box  
+		$(".close,.blackbox").click(function(){
+			$(".blackbox").fadeOut(800);
+			$(".modalbox").animate({
+				"top":"-250px"
+			},1000)
+		})
+
+		// esc vr click kelyavr close hoel modal box 
+		$(document).keyup(function(keyobj){
+			//console.log(keyobj.keyCode)
+			if(keyobj.keyCode == 27){
+				$(".blackbox").fadeOut(800);
+				$(".modalbox").animate({
+					"top":"-250px"
+				},1000)	
+			}
+		})		
+	});
+</script>
+
+
